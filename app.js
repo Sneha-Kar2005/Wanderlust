@@ -116,19 +116,23 @@ app.use((req, res, next) => {
 
 // General error handler
 // General error handler
+// General error handler
 app.use((err, req, res, next) => {
     console.error("========== ERROR ==========");
-    console.error("Message:", err.message);
-    console.error("Stack:", err.stack);
-    console.error("===========================");
+    console.error("Message:", err?.message);
+    console.error("Stack:", err?.stack);
+    console.error("Full error:", err);
+    console.error("============================");
 
-    let statusCode = err.statusCode || 500;
-    let message = err.message || "Something went wrong!";
+    const statusCode = err?.statusCode || 500;
+    const message = err?.message || "Something went wrong!";
 
     res.status(statusCode).render("error.ejs", {
         message,
     });
 });
+
+
 
 
 

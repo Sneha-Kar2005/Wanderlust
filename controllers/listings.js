@@ -89,47 +89,41 @@ module.exports.showListing = async (req, res) => {
 // CREATE LISTING
 
 // CREATE LISTING
-
 module.exports.createListing = async (req, res, next) => {
     try {
-        // Check if image was uploaded
-        if (!req.file) {
-            req.flash("error", "Please upload an image.");
-            return res.redirect("/listings/new");
-        }
+        console.log("========== CREATE LISTING ==========");
 
-        // Check if location is provided
-        if (!req.body.listing || !req.body.listing.location) {
-            req.flash("error", "Please enter a valid location.");
-            return res.redirect("/listings/new");
-        }
+        console.log("Request body:", req.body);
+        console.log("Uploaded file:", req.file);
 
-        // Geocode the listing location
+        const location = req.body.listing.location;
+
+        console.log("Location:", location);
+
+        // Geocoding
         let response = await geocodingClient
             .forwardGeocode({
-                query: req.body.listing.location,
+                query: location,
                 limit: 1,
             })
             .send();
 
-        // Check if Mapbox found the location
+        console.log("Geocoding response received");
+
         if (
             !response.body.features ||
             response.body.features.length === 0
         ) {
-            req.flash(
-                "error",
-                "Location not found. Please enter a valid location."
+            throw new Error(
+                "Mapbox could not find this location: " + location
             );
-
-            return res.redirect("/listings/new");
         }
 
-        // Get uploaded image details
         let url = req.file.path;
         let filename = req.file.filename;
 
-        // Create new listing
+        console.log("Image uploaded successfully");
+
         const newListing = new Listing(req.body.listing);
 
         newListing.owner = req.user._id;
@@ -139,23 +133,23 @@ module.exports.createListing = async (req, res, next) => {
             filename,
         };
 
-        // Save location geometry
         newListing.geometry =
             response.body.features[0].geometry;
 
-        // Save listing to database
         let savedListing = await newListing.save();
 
-        console.log(savedListing);
+        console.log("Listing saved successfully:", savedListing._id);
 
         req.flash("success", "New Listing Created!");
 
         res.redirect("/listings");
 
     } catch (err) {
+        console.error("CREATE LISTING FAILED:", err);
         next(err);
     }
 };
+
 
 
 
