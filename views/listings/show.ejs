@@ -1,0 +1,420 @@
+<% layout("/layouts/boilerplate") %>
+<!-- <script>
+    const mapToken = "<%= process.env.MAP_TOKEN %>";
+    const coordinates = JSON.parse('<%- JSON.stringify(listing.geometry?.coordinates || null) %>');
+    const listing = <%- JSON.stringify(listing) %>;
+</script> -->
+
+<script id="listing-data" type="application/json">
+    <%- JSON.stringify({
+        listing: listing,
+        coordinates: listing.geometry?.coordinates || null
+    }) %>
+</script>
+
+<script>
+    const data = JSON.parse(document.getElementById("listing-data").textContent);
+
+    const mapToken = "<%= process.env.MAP_TOKEN %>";
+    const coordinates = data.coordinates;
+    const listing = data.listing;
+</script>
+
+
+<!-- LISTING DETAILS -->
+<div class="row mt-1">
+
+    <div class="col-md-5 offset-md-3">
+
+        <div class="card mb-2 listing-card">
+
+            <img
+                src="<%= listing.image.url %>"
+                class="card-img-top show-img"
+                alt="listing_image"
+                style="height:260px; object-fit:cover;"
+            >
+
+            <div class="card-body">
+
+                <h4 class="show-title mb-2">
+                    <%= listing.title %>
+                </h4>
+
+
+                <p class="card-text">
+                    Owned by
+                    <i><%= listing.owner.username %></i>
+                </p>
+
+
+                <p class="mb-2">
+                    Description:
+                    <%= listing.description %>
+                </p>
+
+
+                <p class="mb-2">
+                    Price:
+                    ₹ <%= listing.price %>
+                </p>
+
+
+                <p class="mb-2">
+                    Location:
+                    <%= listing.location %>
+                </p>
+
+
+                <p class="mb-3">
+                    Country:
+                    <%= listing.country %>
+                </p>
+
+
+                <!-- EDIT / DELETE ONLY FOR OWNER -->
+                <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
+
+                    <!-- Edit Button -->
+                    <a
+                        href="/listings/<%= listing._id %>/edit"
+                        class="btn btn-danger me-2"
+                    >
+                        Edit
+                    </a>
+
+
+                    <!-- Delete Button -->
+                    <form
+                        method="POST"
+                        action="/listings/<%= listing._id %>?_method=DELETE"
+                        class="d-inline"
+                    >
+                        <button type="submit" class="btn btn-dark">
+                            Delete
+                        </button>
+                    </form>
+
+                <% } %>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- REVIEW SECTION -->
+<div class="row">
+
+    <div class="col-md-5 offset-md-3">
+
+        <% if(currUser) { %>
+            <hr/>
+
+            <h4>Leave a Review</h4>
+
+            
+
+
+            <!-- REVIEW FORM -->
+            <form
+                action="/listings/<%= listing.id %>/reviews"
+                method="POST"
+                novalidate
+                class="needs-validation"
+                id="review-form"
+            >
+
+
+                <!-- STAR RATING -->
+                <div class="mb-3 mt-3">
+
+                    <label class="form-label">
+                        Rating
+                    </label>
+
+
+                    <fieldset class="starability-slot">
+
+                        <!--
+                            This hidden input tells the controller
+                            whether the user manually selected a star.
+                        -->
+                        <input
+                            type="hidden"
+                            name="review[manualRating]"
+                            id="manualRating"
+                            value="false"
+                        >
+
+
+                        <!-- No rating option -->
+                        <input
+                            type="radio"
+                            id="no-rate"
+                            class="input-no-rate"
+                            name="review[rating]"
+                            value="0"
+                            aria-label="No rating."
+                        />
+
+
+                        <!-- 1 STAR - DEFAULT -->
+                        <input
+                            type="radio"
+                            id="first-rate1"
+                            name="review[rating]"
+                            value="1"
+                            checked
+                        />
+
+                        <label
+                            for="first-rate1"
+                            title="Terrible"
+                        >
+                            1 star
+                        </label>
+
+
+                        <!-- 2 STARS -->
+                        <input
+                            type="radio"
+                            id="first-rate2"
+                            name="review[rating]"
+                            value="2"
+                        />
+
+                        <label
+                            for="first-rate2"
+                            title="Not good"
+                        >
+                            2 stars
+                        </label>
+
+
+                        <!-- 3 STARS -->
+                        <input
+                            type="radio"
+                            id="first-rate3"
+                            name="review[rating]"
+                            value="3"
+                        />
+
+                        <label
+                            for="first-rate3"
+                            title="Average"
+                        >
+                            3 stars
+                        </label>
+
+
+                        <!-- 4 STARS -->
+                        <input
+                            type="radio"
+                            id="first-rate4"
+                            name="review[rating]"
+                            value="4"
+                        />
+
+                        <label
+                            for="first-rate4"
+                            title="Very good"
+                        >
+                            4 stars
+                        </label>
+
+
+                        <!-- 5 STARS -->
+                        <input
+                            type="radio"
+                            id="first-rate5"
+                            name="review[rating]"
+                            value="5"
+                        />
+
+                        <label
+                            for="first-rate5"
+                            title="Amazing"
+                        >
+                            5 stars
+                        </label>
+
+                    </fieldset>
+
+                </div>
+
+
+
+                <!-- COMMENTS -->
+                <div class="mb-3 mt-3">
+
+                    <label
+                        for="comment"
+                        class="form-label d-block mb-2"
+                    >
+                        Comments
+                    </label>
+
+
+                    <textarea
+                        name="review[comment]"
+                        id="comment"
+                        cols="30"
+                        rows="5"
+                        class="form-control"
+                        required
+                    ></textarea>
+
+
+                    <div class="invalid-feedback">
+                        Please enter a review comment.
+                    </div>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+                <button
+                    type="submit"
+                    class="btn btn-outline-dark mt-2 mb-5"
+                >
+                    Submit
+                </button>
+
+            </form>
+
+
+            <hr>
+
+        <% } %>
+
+
+
+        <!-- ALL REVIEWS -->
+        
+
+<% if(listing.reviews.length > 0) { %>
+        <div class="row">
+        <p>
+            <b>All Reviews</b>
+        </p>
+            <% for(review of listing.reviews) { %>
+
+                <div
+                    class="card ms-3 mb-3"
+                    style="width: 280px;"
+                >
+
+                    <div class="card-body">
+
+                        <!-- USERNAME -->
+                        <h5 class="card-title">
+                            @<%= review.author.username %>
+                        </h5>
+
+
+                        <!-- STAR RATING -->
+                        <p
+                            class="starability-result card-text"
+                            data-rating="<%= review.rating %>"
+                        ></p>
+
+
+                        <!-- COMMENT -->
+                        <p class="card-text">
+                            <%= review.comment %>
+                        </p>
+
+                    </div>
+
+
+                    <!-- DELETE REVIEW -->
+                    <% if(currUser) { %>
+
+                        <form
+                            class="mb-3 ms-3"
+                            method="POST"
+                            action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
+                        >
+
+                            <button
+                                type="submit"
+                                class="btn btn-sm btn-dark"
+                            >
+                                Delete
+                            </button>
+
+                        </form>
+
+                    <% } %>
+
+                </div>
+
+            <% } %>
+            <% } %>
+
+        </div>
+   
+
+
+    </div>
+         <div class="col-8 offset-3 mb-3">
+    <h3>Where you'll be</h3>
+    <div id="map"></div>
+</div>
+
+</div>
+
+<script src="/js/map.js"></script>
+
+
+
+
+
+
+
+
+<!-- MANUAL STAR SELECTION DETECTION -->
+<script>
+
+    const ratingInputs = document.querySelectorAll(
+        'input[name="review[rating]"]'
+    );
+
+    const manualRatingInput =
+        document.getElementById("manualRating");
+
+
+    ratingInputs.forEach(function(input) {
+
+        input.addEventListener("change", function() {
+
+            // User manually selected a star
+            manualRatingInput.value = "true";
+
+        });
+
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

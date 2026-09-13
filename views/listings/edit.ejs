@@ -1,0 +1,355 @@
+
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-3">
+
+    <div class="col-md-8 offset-md-2">
+
+        <h3 class="mb-4">Edit your Listing</h3>
+
+        <form
+            method="POST"
+            action="/listings/<%= listing._id %>?_method=PUT"
+            class="needs-validation"
+            novalidate
+            enctype="multipart/form-data"
+        >
+
+            <!-- TITLE -->
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Title
+                </label>
+
+                <input
+                    type="text"
+                    name="listing[title]"
+                    value="<%= listing.title %>"
+                    class="form-control"
+                    required
+                    minlength="5"
+                />
+
+                <div class="valid-feedback">
+                    Title looks good!
+                </div>
+
+                <div class="invalid-feedback">
+                    Please enter a valid title.
+                </div>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Description
+                </label>
+
+                <textarea
+                    name="listing[description]"
+                    class="form-control"
+                    rows="3"
+                    required
+                    minlength="20"
+                ><%= listing.description %></textarea>
+
+                <div class="valid-feedback">
+                    Description looks good!
+                </div>
+
+                <div class="invalid-feedback">
+                    Description should be at least 20 characters.
+                </div>
+
+            </div>
+
+
+            <!-- ORIGINAL IMAGE -->
+
+            <div class="mb-3">
+
+                Original Listing Image <br />
+
+                <img
+                    src="<%= originalImageUrl %>"
+                    style="width: 300px; height: 200px; object-fit: cover;"
+                    alt="Original listing image"
+                />
+
+            </div>
+
+
+            <!-- UPLOAD NEW IMAGE -->
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Upload New Image
+                </label>
+
+                <input
+                    type="file"
+                    name="listing[image]"
+                    class="form-control"
+                    accept="image/*"
+                />
+
+                <div class="valid-feedback">
+                    Image looks good!
+                </div>
+
+                <div class="invalid-feedback">
+                    Please select a valid image.
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="mb-3">
+
+                <label for="category" class="form-label">
+                    Category
+                </label>
+
+                <select
+                    name="listing[category]"
+                    id="category"
+                    class="form-select"
+                    required
+                >
+
+                    <option value="" disabled>
+                        Select a category
+                    </option>
+
+                    <option
+                        value="Trending"
+                        <%= listing.category === "Trending" ? "selected" : "" %>
+                    >
+                        Trending
+                    </option>
+
+                    <option
+                        value="Rooms"
+                        <%= listing.category === "Rooms" ? "selected" : "" %>
+                    >
+                        Rooms
+                    </option>
+
+                    <option
+                        value="Iconic Cities"
+                        <%= listing.category === "Iconic Cities" ? "selected" : "" %>
+                    >
+                        Iconic Cities
+                    </option>
+
+                    <option
+                        value="Mountains"
+                        <%= listing.category === "Mountains" ? "selected" : "" %>
+                    >
+                        Mountains
+                    </option>
+
+                    <option
+                        value="Castles"
+                        <%= listing.category === "Castles" ? "selected" : "" %>
+                    >
+                        Castles
+                    </option>
+
+                    <option
+                        value="Amazing Pools"
+                        <%= listing.category === "Amazing Pools" ? "selected" : "" %>
+                    >
+                        Amazing Pools
+                    </option>
+
+                    <option
+                        value="Camping"
+                        <%= listing.category === "Camping" ? "selected" : "" %>
+                    >
+                        Camping
+                    </option>
+
+                    <option
+                        value="Farms"
+                        <%= listing.category === "Farms" ? "selected" : "" %>
+                    >
+                        Farms
+                    </option>
+
+                    <option
+                        value="Arctic"
+                        <%= listing.category === "Arctic" ? "selected" : "" %>
+                    >
+                        Arctic
+                    </option>
+
+                    <option
+                        value="Domes"
+                        <%= listing.category === "Domes" ? "selected" : "" %>
+                    >
+                        Domes
+                    </option>
+
+                    <option
+                        value="Boats"
+                        <%= listing.category === "Boats" ? "selected" : "" %>
+                    >
+                        Boats
+                    </option>
+
+                </select>
+
+                <div class="valid-feedback">
+                    Category looks good!
+                </div>
+
+                <div class="invalid-feedback">
+                    Please select a category.
+                </div>
+
+            </div>
+
+
+            <!-- PRICE AND COUNTRY -->
+
+            <div class="row">
+
+                <div class="mb-3 col-md-4">
+
+                    <label class="form-label">
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        name="listing[price]"
+                        value="<%= listing.price %>"
+                        class="form-control"
+                        required
+                        min="1"
+                    />
+
+                    <div class="valid-feedback">
+                        Price looks good!
+                    </div>
+
+                    <div class="invalid-feedback">
+                        Price must be valid.
+                    </div>
+
+                </div>
+
+
+                <div class="mb-3 col-md-8">
+
+                    <label class="form-label">
+                        Country
+                    </label>
+
+                    <input
+                        type="text"
+                        name="listing[country]"
+                        value="<%= listing.country %>"
+                        class="form-control"
+                        required
+                        minlength="2"
+                    />
+
+                    <div class="valid-feedback">
+                        Country looks good!
+                    </div>
+
+                    <div class="invalid-feedback">
+                        Please enter a valid country name.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="mb-4">
+
+                <label class="form-label">
+                    Location
+                </label>
+
+                <input
+                    type="text"
+                    name="listing[location]"
+                    value="<%= listing.location %>"
+                    class="form-control"
+                    required
+                    minlength="3"
+                />
+
+                <div class="valid-feedback">
+                    Location looks good!
+                </div>
+
+                <div class="invalid-feedback">
+                    Please enter a valid location.
+                </div>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button class="btn btn-danger mb-5">
+                Edit
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script>
+
+(() => {
+
+    "use strict";
+
+    const forms = document.querySelectorAll(".needs-validation");
+
+    Array.from(forms).forEach((form) => {
+
+        form.addEventListener("submit", (event) => {
+
+            if (!form.checkValidity()) {
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+            }
+
+            form.classList.add("was-validated");
+
+        }, false);
+
+    });
+
+})();
+
+</script>
+
+
+
+
+
