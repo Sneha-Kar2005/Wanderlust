@@ -44,7 +44,7 @@
 
                 <p class="card-text">
                     Owned by
-                    <i><%= listing.owner.username %></i>
+                       <i><%= listing.owner ? listing.owner.username : "Unknown user" %></i>
                 </p>
 
 
@@ -73,7 +73,7 @@
 
 
                 <!-- EDIT / DELETE ONLY FOR OWNER -->
-                <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
+                <% if(currUser && listing.owner && listing.owner._id.equals(currUser._id)) { %>
 
                     <!-- Edit Button -->
                     <a

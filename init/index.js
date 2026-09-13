@@ -6,6 +6,7 @@ const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
+const User = require("../models/user.js");
 
 const MONGO_URL = process.env.ATLASDB_URL;
 
@@ -52,6 +53,17 @@ const initDB = async () => {
     try {
         await main();
 
+        // Find an existing user in MongoDB Atlas.
+        const owner = await User.findOne({});
+
+        if (!owner) {
+            throw new Error(
+                "No users found in MongoDB Atlas. Please register a user first."
+            );
+        }
+
+        console.log(`Using existing user: ${owner.username}`);
+
         const listings = [];
 
         for (const obj of initData.data) {
@@ -62,9 +74,9 @@ const initDB = async () => {
             listings.push(listing);
         }
 
-        // Restore original listings without deleting existing data.
-        // If a listing with the same title and location exists,
-        // update it instead of creating a duplicate.
+        // Restore listings without deleting existing data.
+        // Existing listings with the same title and location
+        // will be updated instead of duplicated.
 
         for (const listing of listings) {
             const filter = {
@@ -75,7 +87,10 @@ const initDB = async () => {
             await Listing.findOneAndUpdate(
                 filter,
                 {
-                    $set: listing,
+                    $set: {
+                        ...listing,
+                        owner: owner._id,
+                    },
                 },
                 {
                     upsert: true,
@@ -90,6 +105,7 @@ const initDB = async () => {
 
         console.log("====================================");
         console.log("All listings restored successfully!");
+        console.log("Owner references updated successfully!");
         console.log("====================================");
     } catch (err) {
         console.error("Database initialization failed:", err);
@@ -100,5 +116,7 @@ const initDB = async () => {
 };
 
 initDB();
+
+
 
 
