@@ -1,55 +1,104 @@
-require("dotenv").config({ quiet: true });
+
+require("dotenv").config();
 
 const mongoose = require("mongoose");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
+
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const MONGO_URL = process.env.ATLASDB_URL;
 
-const geocodingClient = mbxGeocoding({ accessToken: process.env.MAP_TOKEN });
+if (!MONGO_URL) {
+    throw new Error("ATLASDB_URL is missing in your .env file.");
+}
 
-main()
-  .then(() => {
-    console.log("connected to DB");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+if (!process.env.MAP_TOKEN) {
+    throw new Error("MAP_TOKEN is missing in your .env file.");
+}
+
+const geocodingClient = mbxGeocoding({
+    accessToken: process.env.MAP_TOKEN,
+});
 
 async function main() {
-  await mongoose.connect(MONGO_URL);
+    await mongoose.connect(MONGO_URL);
+    console.log("Connected to MongoDB Atlas");
 }
 
 const geocodeListing = async (obj) => {
-  const response = await geocodingClient
-    .forwardGeocode({ query: `${obj.location}, ${obj.country}`, limit: 1 })
-    .send();
+    const response = await geocodingClient
+        .forwardGeocode({
+            query: `${obj.location}, ${obj.country}`,
+            limit: 1,
+        })
+        .send();
 
-  const geometry = response.body.features[0]
-    ? response.body.features[0].geometry
-    : { type: "Point", coordinates: [0, 0] };
+    const geometry =
+        response.body.features.length > 0
+            ? response.body.features[0].geometry
+            : {
+                  type: "Point",
+                  coordinates: [0, 0],
+              };
 
-  return { ...obj, geometry };
+    return {
+        ...obj,
+        geometry,
+    };
 };
 
 const initDB = async () => {
-  await Listing.deleteMany({});
+    try {
+        await main();
 
-  const listingsWithGeometry = [];
+        const listings = [];
 
-  for (const obj of initData.data) {
-    const withGeometry = await geocodeListing(obj);
+        for (const obj of initData.data) {
+            console.log(`Processing: ${obj.title}`);
 
-    listingsWithGeometry.push({
-      ...withGeometry,
-      owner: "6a9a45004b62198cd995643a",
-    });
-  }
+            const listing = await geocodeListing(obj);
 
-  await Listing.insertMany(listingsWithGeometry);
-  console.log("data was initialized");
-  process.exit(0);
+            listings.push(listing);
+        }
+
+        // Restore original listings without deleting existing data.
+        // If a listing with the same title and location exists,
+        // update it instead of creating a duplicate.
+
+        for (const listing of listings) {
+            const filter = {
+                title: listing.title,
+                location: listing.location,
+            };
+
+            await Listing.findOneAndUpdate(
+                filter,
+                {
+                    $set: listing,
+                },
+                {
+                    upsert: true,
+                    new: true,
+                    runValidators: true,
+                    setDefaultsOnInsert: true,
+                }
+            );
+
+            console.log(`Restored: ${listing.title}`);
+        }
+
+        console.log("====================================");
+        console.log("All listings restored successfully!");
+        console.log("====================================");
+    } catch (err) {
+        console.error("Database initialization failed:", err);
+    } finally {
+        await mongoose.connection.close();
+        console.log("MongoDB connection closed");
+    }
 };
 
 initDB();
+
+
