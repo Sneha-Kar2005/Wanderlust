@@ -7,9 +7,11 @@ rather than eyeballed. Every listing, photo, review, host and price is real cont
 scraped from Airbnb, normalised into JSON and served locally. The app runs **completely
 offline**: no CDN, no external fonts, no map API, no network calls at runtime.
 
-![Home page](docs/screenshots/page-home.webp)
+### ➜ Live: **[wanderlust-airbnb-eight.vercel.app](https://wanderlust-airbnb-eight.vercel.app/)**
 
-Next.js 16 (App Router) · TypeScript · Tailwind v4 · MongoDB (optional) · Vercel-ready.
+[![Home page](docs/screenshots/page-home.webp)](https://wanderlust-airbnb-eight.vercel.app/)
+
+Next.js 16 (App Router) · TypeScript · Tailwind v4 · MongoDB (optional) · deployed on Vercel.
 
 **Built by Sneha Kar.**
 
@@ -34,6 +36,10 @@ Next.js 16 (App Router) · TypeScript · Tailwind v4 · MongoDB (optional) · Ve
 ---
 
 ## Quick start
+
+Try it without installing anything: **<https://wanderlust-airbnb-eight.vercel.app/>**
+
+To run it locally:
 
 ```bash
 npm install
