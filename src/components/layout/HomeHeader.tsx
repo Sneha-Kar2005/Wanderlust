@@ -114,8 +114,12 @@ export function HomeHeader({
       <div
         inert={collapsed}
         className={cn(
-          "header-gutter hidden overflow-hidden transition-all duration-200 md:block",
-          collapsed ? "max-h-0 opacity-0" : "max-h-32 pb-5 opacity-100",
+          "header-gutter hidden transition-all duration-200 md:block",
+          // Clip only while collapsing — the search panels are absolutely
+          // positioned children and would otherwise be cut off by this box.
+          collapsed
+            ? "max-h-0 overflow-hidden opacity-0"
+            : "max-h-32 overflow-visible pb-5 opacity-100",
         )}
       >
         <SearchBar
