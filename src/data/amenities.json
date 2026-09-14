@@ -1,0 +1,354 @@
+[
+  {
+    "name": "Wifi",
+    "count": 75
+  },
+  {
+    "name": "Kitchen",
+    "count": 66
+  },
+  {
+    "name": "Exterior security cameras on property",
+    "count": 57
+  },
+  {
+    "name": "TV",
+    "count": 56
+  },
+  {
+    "name": "Free parking on premises",
+    "count": 55
+  },
+  {
+    "name": "Dedicated workspace",
+    "count": 51
+  },
+  {
+    "name": "Air conditioning",
+    "count": 31
+  },
+  {
+    "name": "Washing machine",
+    "count": 28
+  },
+  {
+    "name": "Pets allowed",
+    "count": 19
+  },
+  {
+    "name": "Fridge",
+    "count": 13
+  },
+  {
+    "name": "Mountain view",
+    "count": 12
+  },
+  {
+    "name": "Pool",
+    "count": 11
+  },
+  {
+    "name": "Lift",
+    "count": 10
+  },
+  {
+    "name": "Garden view",
+    "count": 9
+  },
+  {
+    "name": "Back garden",
+    "count": 7
+  },
+  {
+    "name": "Free on-street parking",
+    "count": 7
+  },
+  {
+    "name": "AC – split-type ductless system",
+    "count": 6
+  },
+  {
+    "name": "Beach access",
+    "count": 6
+  },
+  {
+    "name": "Free washer – In unit",
+    "count": 5
+  },
+  {
+    "name": "Shared beach access",
+    "count": 5
+  },
+  {
+    "name": "Smoking allowed",
+    "count": 5
+  },
+  {
+    "name": "Hairdryer",
+    "count": 5
+  },
+  {
+    "name": "Valley view",
+    "count": 4
+  },
+  {
+    "name": "Waterfront",
+    "count": 4
+  },
+  {
+    "name": "Bath",
+    "count": 4
+  },
+  {
+    "name": "Luggage drop-off allowed",
+    "count": 4
+  },
+  {
+    "name": "Park view",
+    "count": 4
+  },
+  {
+    "name": "Free driveway parking on premises – 1 space",
+    "count": 3
+  },
+  {
+    "name": "Lock on bedroom door",
+    "count": 3
+  },
+  {
+    "name": "Courtyard view",
+    "count": 3
+  },
+  {
+    "name": "Private patio or balcony",
+    "count": 3
+  },
+  {
+    "name": "Indoor fireplace",
+    "count": 2
+  },
+  {
+    "name": "Patio or balcony",
+    "count": 2
+  },
+  {
+    "name": "River view",
+    "count": 2
+  },
+  {
+    "name": "Breakfast",
+    "count": 2
+  },
+  {
+    "name": "Canal view",
+    "count": 2
+  },
+  {
+    "name": "Microwave",
+    "count": 2
+  },
+  {
+    "name": "Hot tub",
+    "count": 2
+  },
+  {
+    "name": "Free washer – In building",
+    "count": 2
+  },
+  {
+    "name": "Window AC unit",
+    "count": 2
+  },
+  {
+    "name": "43-inch HDTV with Netflix",
+    "count": 1
+  },
+  {
+    "name": "Free residential garage on premises – 1 space",
+    "count": 1
+  },
+  {
+    "name": "Free carport on premises – 2 spaces",
+    "count": 1
+  },
+  {
+    "name": "TV with standard cable/satellite",
+    "count": 1
+  },
+  {
+    "name": "EV charger",
+    "count": 1
+  },
+  {
+    "name": "HDTV with cable/satellite TV",
+    "count": 1
+  },
+  {
+    "name": "43-inch HDTV with Amazon Prime Video, Disney+, Fire TV, Netflix, Apple TV",
+    "count": 1
+  },
+  {
+    "name": "EV charger – level 1",
+    "count": 1
+  },
+  {
+    "name": "Fast wifi – 324 Mbps",
+    "count": 1
+  },
+  {
+    "name": "Shared outdoor pool – available all year, open specific hours",
+    "count": 1
+  },
+  {
+    "name": "Fast wifi – 192 Mbps",
+    "count": 1
+  },
+  {
+    "name": "Private outdoor pool – available all year, open specific hours",
+    "count": 1
+  },
+  {
+    "name": "Free residential garage on premises – 2 spaces",
+    "count": 1
+  },
+  {
+    "name": "Private outdoor pool – available all year, open 24 hours, pool toys",
+    "count": 1
+  },
+  {
+    "name": "65-inch HDTV with Amazon Prime Video, Disney+",
+    "count": 1
+  },
+  {
+    "name": "Free driveway parking on premises",
+    "count": 1
+  },
+  {
+    "name": "Tumble dryer",
+    "count": 1
+  },
+  {
+    "name": "Resort view",
+    "count": 1
+  },
+  {
+    "name": "Cot – always at the listing",
+    "count": 1
+  },
+  {
+    "name": "Travel cot – always at the listing",
+    "count": 1
+  },
+  {
+    "name": "100-inch HDTV with Netflix",
+    "count": 1
+  },
+  {
+    "name": "Fast wifi – 164 Mbps",
+    "count": 1
+  },
+  {
+    "name": "Free residential garage on premises",
+    "count": 1
+  },
+  {
+    "name": "Free multistorey car park on premises – 2 spaces",
+    "count": 1
+  },
+  {
+    "name": "Free residential garage on premises – 6 spaces",
+    "count": 1
+  },
+  {
+    "name": "Private back garden – Fully fenced",
+    "count": 1
+  },
+  {
+    "name": "LG refrigerator",
+    "count": 1
+  },
+  {
+    "name": "Children’s books and toys",
+    "count": 1
+  },
+  {
+    "name": "Private back garden",
+    "count": 1
+  },
+  {
+    "name": "Ocean view",
+    "count": 1
+  },
+  {
+    "name": "Free dryer – In unit",
+    "count": 1
+  },
+  {
+    "name": "Lake access",
+    "count": 1
+  },
+  {
+    "name": "43-inch HDTV",
+    "count": 1
+  },
+  {
+    "name": "Free carport on premises – 3 spaces",
+    "count": 1
+  },
+  {
+    "name": "32-inch HDTV",
+    "count": 1
+  },
+  {
+    "name": "Firepit",
+    "count": 1
+  },
+  {
+    "name": "Fast wifi – 61 Mbps",
+    "count": 1
+  },
+  {
+    "name": "TV with cable/satellite TV, standard cable/satellite",
+    "count": 1
+  },
+  {
+    "name": "Private outdoor pool – available all year, open specific hours, lap pool",
+    "count": 1
+  },
+  {
+    "name": "Free parking on premises – 1 space",
+    "count": 1
+  },
+  {
+    "name": "65-inch HDTV",
+    "count": 1
+  },
+  {
+    "name": "Portable air conditioning",
+    "count": 1
+  },
+  {
+    "name": "Shared outdoor pool – available all year, open specific hours, lap pool",
+    "count": 1
+  },
+  {
+    "name": "City skyline view",
+    "count": 1
+  },
+  {
+    "name": "HDTV",
+    "count": 1
+  },
+  {
+    "name": "Free washing machine",
+    "count": 1
+  },
+  {
+    "name": "Fast wifi – 96 Mbps",
+    "count": 1
+  },
+  {
+    "name": "Private outdoor pool",
+    "count": 1
+  }
+]

@@ -1,0 +1,437 @@
+[
+  {
+    "slug": "north-goa",
+    "name": "North Goa",
+    "region": null,
+    "state": "Goa",
+    "terrain": "beach",
+    "tagline": "Popular beach destination",
+    "order": 1,
+    "country": "India",
+    "coordinates": {
+      "lat": 15.557492,
+      "lng": 73.758935
+    },
+    "listingCount": 8
+  },
+  {
+    "slug": "south-goa",
+    "name": "South Goa",
+    "region": null,
+    "state": "Goa",
+    "terrain": "beach",
+    "tagline": "For sights like Basilica of Bom Jesus",
+    "order": 2,
+    "country": "India",
+    "coordinates": {
+      "lat": 15.2839,
+      "lng": 73.9134
+    },
+    "listingCount": 8
+  },
+  {
+    "slug": "puducherry",
+    "name": "Puducherry",
+    "region": null,
+    "state": "Puducherry",
+    "terrain": "beach",
+    "tagline": "For its seaside allure",
+    "order": 3,
+    "country": "India",
+    "coordinates": {
+      "lat": 11.9311,
+      "lng": 79.8338
+    },
+    "listingCount": 8
+  },
+  {
+    "slug": "ooty",
+    "name": "Ooty",
+    "region": null,
+    "state": "Tamil Nadu",
+    "terrain": "hills",
+    "tagline": "Great for a weekend getaway",
+    "order": 4,
+    "country": "India",
+    "coordinates": {
+      "lat": 11.4657,
+      "lng": 76.6987
+    },
+    "listingCount": 8
+  },
+  {
+    "slug": "nandi-hills",
+    "name": "Nandi Hills",
+    "region": null,
+    "state": "Karnataka",
+    "terrain": "hills",
+    "tagline": "For nature lovers",
+    "order": 5,
+    "country": "India",
+    "coordinates": {
+      "lat": 12.7155,
+      "lng": 77.9487
+    },
+    "listingCount": 8
+  },
+  {
+    "slug": "madikeri",
+    "name": "Madikeri",
+    "region": null,
+    "state": "Karnataka",
+    "terrain": "hills",
+    "tagline": "Great for a weekend getaway",
+    "order": 6,
+    "country": "India",
+    "coordinates": {
+      "lat": 12.4248,
+      "lng": 75.7257
+    },
+    "listingCount": 8
+  },
+  {
+    "slug": "wayanad",
+    "name": "Wayanad",
+    "region": null,
+    "state": "Kerala",
+    "terrain": "hills",
+    "tagline": "For nature lovers",
+    "order": 7,
+    "country": "India",
+    "coordinates": {
+      "lat": 11.755,
+      "lng": 76.1729
+    },
+    "listingCount": 8
+  },
+  {
+    "slug": "mysore",
+    "name": "Mysore",
+    "region": null,
+    "state": "Karnataka",
+    "terrain": "city",
+    "tagline": "For its palaces and heritage",
+    "order": 8,
+    "country": "India",
+    "coordinates": {
+      "lat": 12.3236,
+      "lng": 76.59079
+    },
+    "listingCount": 9
+  },
+  {
+    "slug": "mangalore",
+    "name": "Mangalore",
+    "region": null,
+    "state": "Karnataka",
+    "terrain": "beach",
+    "tagline": "For its beaches and temples",
+    "order": 9,
+    "country": "India",
+    "coordinates": {
+      "lat": 12.8777,
+      "lng": 74.8388
+    },
+    "listingCount": 8
+  },
+  {
+    "slug": "mumbai",
+    "name": "Mumbai",
+    "region": null,
+    "state": "Maharashtra",
+    "terrain": "city",
+    "tagline": "For its vibrant nightlife",
+    "order": 10,
+    "country": "India",
+    "coordinates": {
+      "lat": 19.0789,
+      "lng": 72.8485
+    },
+    "listingCount": 8
+  },
+  {
+    "slug": "candolim",
+    "name": "Candolim",
+    "region": "North Goa",
+    "state": "Goa",
+    "terrain": "beach",
+    "tagline": "Popular beach destination",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 15.523,
+      "lng": 73.7734
+    },
+    "listingCount": 3
+  },
+  {
+    "slug": "colva",
+    "name": "Colva",
+    "region": "South Goa",
+    "state": "Goa",
+    "terrain": "beach",
+    "tagline": "For its quiet beaches",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 15.2839,
+      "lng": 73.9134
+    },
+    "listingCount": 2
+  },
+  {
+    "slug": "varca",
+    "name": "Varca",
+    "region": "South Goa",
+    "state": "Goa",
+    "terrain": "beach",
+    "tagline": "For its quiet beaches",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 15.2243,
+      "lng": 73.9376
+    },
+    "listingCount": 2
+  },
+  {
+    "slug": "benaulim",
+    "name": "Benaulim",
+    "region": "South Goa",
+    "state": "Goa",
+    "terrain": "beach",
+    "tagline": "For its quiet beaches",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 15.260939,
+      "lng": 73.930753
+    },
+    "listingCount": 2
+  },
+  {
+    "slug": "baga",
+    "name": "Baga",
+    "region": "North Goa",
+    "state": "Goa",
+    "terrain": "beach",
+    "tagline": "Popular beach destination",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 15.557492,
+      "lng": 73.758935
+    },
+    "listingCount": 2
+  },
+  {
+    "slug": "the-nilgiris",
+    "name": "The Nilgiris",
+    "region": "Ooty",
+    "state": "Tamil Nadu",
+    "terrain": "hills",
+    "tagline": "For nature lovers",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 11.4142,
+      "lng": 76.7386
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "balamavatti",
+    "name": "Balamavatti",
+    "region": "Madikeri",
+    "state": "Karnataka",
+    "terrain": "hills",
+    "tagline": "For nature lovers",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 12.3328,
+      "lng": 75.6286
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "hosur",
+    "name": "Hosur",
+    "region": "Nandi Hills",
+    "state": "Tamil Nadu",
+    "terrain": "city",
+    "tagline": "Great for a weekend getaway",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 12.7155,
+      "lng": 77.9487
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "kalpetta",
+    "name": "Kalpetta",
+    "region": "Wayanad",
+    "state": "Kerala",
+    "terrain": "hills",
+    "tagline": "For nature lovers",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 11.6269,
+      "lng": 76.0863
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "nerul",
+    "name": "Nerul",
+    "region": "North Goa",
+    "state": "Goa",
+    "terrain": "beach",
+    "tagline": "Popular beach destination",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 15.5092,
+      "lng": 73.7908
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "betalbatim",
+    "name": "Betalbatim",
+    "region": "South Goa",
+    "state": "Goa",
+    "terrain": "beach",
+    "tagline": "For its quiet beaches",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 15.2934,
+      "lng": 73.9114
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "vayittiri",
+    "name": "Vayittiri",
+    "region": "Wayanad",
+    "state": "Kerala",
+    "terrain": "hills",
+    "tagline": "For nature lovers",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 11.535483,
+      "lng": 76.04553
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "anjuna",
+    "name": "Anjuna",
+    "region": "North Goa",
+    "state": "Goa",
+    "terrain": "beach",
+    "tagline": "For its beach shacks and markets",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 15.59975,
+      "lng": 73.7507
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "chikkaballapura",
+    "name": "Chikkaballapura",
+    "region": "Nandi Hills",
+    "state": "Karnataka",
+    "terrain": "hills",
+    "tagline": "Great for a weekend getaway",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 13.3948,
+      "lng": 77.6935
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "bengaluru",
+    "name": "Bengaluru",
+    "region": "Nandi Hills",
+    "state": "Karnataka",
+    "terrain": "city",
+    "tagline": "Great for a weekend getaway",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 13.3376,
+      "lng": 77.6308
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "sulthan-bathery",
+    "name": "Sulthan Bathery",
+    "region": "Wayanad",
+    "state": "Kerala",
+    "terrain": "hills",
+    "tagline": "For nature lovers",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 11.6685,
+      "lng": 76.2819
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "irulam",
+    "name": "Irulam",
+    "region": "Wayanad",
+    "state": "Kerala",
+    "terrain": "hills",
+    "tagline": "For nature lovers",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 11.7579,
+      "lng": 76.2181
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "krishnagiri",
+    "name": "Krishnagiri",
+    "region": "Wayanad",
+    "state": "Tamil Nadu",
+    "terrain": "hills",
+    "tagline": "Great for a weekend getaway",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 11.6457,
+      "lng": 76.19303
+    },
+    "listingCount": 1
+  },
+  {
+    "slug": "calangute",
+    "name": "Calangute",
+    "region": "North Goa",
+    "state": "Goa",
+    "terrain": "beach",
+    "tagline": "Popular beach destination",
+    "order": null,
+    "country": "India",
+    "coordinates": {
+      "lat": 15.53227,
+      "lng": 73.7608
+    },
+    "listingCount": 1
+  }
+]
