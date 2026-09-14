@@ -1,2 +1,62 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# --- Airbnb clone additions ---
+# Raw scrape artefacts (HTML, screenshots, per-page JSON). Regenerate with
+# the scripts in tools/. The normalised output in src/data IS committed.
+/capture/
+/tools/node_modules/
+
+# Local AI-agent instruction files. `next dev` scaffolds these on any machine
+# where they are missing, so both are ignored to keep the tree clean.
+# The project conventions they describe live in README.md, which IS committed.
+/CLAUDE.md
+/AGENTS.md
+
+# Local working checklist, not part of the deliverable.
+/TODO.md
+
+# Credentials must never be committed.
 .env
-node_modules/
+.env*.local
+*cred*.png
+*secret*
