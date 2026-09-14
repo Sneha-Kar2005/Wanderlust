@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Airbnb Cereal — self-hosted variable font (offline; no external font CDN).
+   --------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Airbnb Cereal VF";
+  src: url("/fonts/AirbnbCerealVF.woff2") format("woff2-variations");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------------------------
+   Design tokens — extracted verbatim from Airbnb's production stylesheet.
+   --------------------------------------------------------------------------- */
+@theme {
+  /* -- core palette -- */
+  --color-black: #000000;
+  --color-hof: #222222;
+  --color-foggy: #6a6a6a;
+  --color-bobo: #b0b0b0;
+  --color-deco: #dddddd;
+  --color-bebe: #ebebeb;
+  --color-faint: #f7f7f7;
+  --color-white: #ffffff;
+
+  --color-rausch: #ff385c;
+  --color-rausch-dark: #e00b41;
+  --color-arches: #c13515;
+  --color-arches-2: #b32505;
+  --color-arches-12: #fff8f6;
+  --color-ondo: #e07912;
+  --color-spruce: #008a05;
+  --color-plus: #92174d;
+  --color-luxe: #460479;
+
+  /* -- semantic -- */
+  --color-text-primary: #222222;
+  --color-text-secondary: #6a6a6a;
+  --color-text-tertiary: #b0b0b0;
+  --color-text-inverse: #ffffff;
+  --color-text-error: #c13515;
+
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f7f7f7;
+  --color-bg-hover: #f7f7f7;
+  --color-bg-inverse: #222222;
+  --color-bg-disabled: #f2f2f2;
+
+  --color-border-primary: #dddddd;
+  --color-border-subtle: #ebebeb;
+  --color-border-strong: #222222;
+
+  /* -- radii -- */
+  --radius-tiny: 4px;
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-large: 16px;
+  --radius-xlarge: 20px;
+  --radius-xxlarge: 24px;
+  --radius-xxxlarge: 32px;
+
+  /* -- elevation -- */
+  --shadow-elevation-0: 0 0 0 1px #dddddd inset;
+  --shadow-elevation-1: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.16);
+  --shadow-elevation-2: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-elevation-3: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-elevation-4: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.08),
+    0 12px 30px rgba(0, 0, 0, 0.18);
+  --shadow-elevation-5: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 6px 8px rgba(0, 0, 0, 0.08),
+    0 16px 56px rgba(0, 0, 0, 0.18);
+  --shadow-tertiary: 0 2px 4px rgba(0, 0, 0, 0.18);
+  --shadow-secondary: 0 6px 16px rgba(0, 0, 0, 0.12);
+  --shadow-primary: 0 6px 20px rgba(0, 0, 0, 0.2);
+  --shadow-high: 0 8px 28px rgba(0, 0, 0, 0.28);
+
+  /* -- typography -- */
+  --font-sans: "Airbnb Cereal VF", Circular, -apple-system, "system-ui", Roboto,
+    "Helvetica Neue", sans-serif;
+
+  /* -- layout -- */
+  --spacing-header: 80px;
+  --container-page: 1760px;
+}
+
+/* Airbnb's signature brand gradient (used on the search submit button) */
+@utility bg-rausch-gradient {
+  background-image: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
+    /*
+     * Horizontal card rails scroll internally. Without this, Chrome lets a
+     * nested scroller inflate documentElement.scrollWidth, which widens the
+     * page. `clip` contains it without creating a scroll container (so the
+     * sticky header keeps working).
+     */
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  /* Airbnb never shows a focus ring on mouse click, only keyboard */
+  :focus-visible {
+    outline: 2px solid var(--color-hof);
+    outline-offset: 2px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+@layer utilities {
+  /*
+   * Page gutter. Measured on production at 1512px: rail content begins at
+   * x = 84, so the container inset is 84px at desktop, tapering on smaller
+   * viewports.
+   */
+  .page-gutter {
+    padding-inline: 24px;
+  }
+  @media (min-width: 744px) {
+    .page-gutter {
+      padding-inline: 40px;
+    }
+  }
+  @media (min-width: 1128px) {
+    .page-gutter {
+      padding-inline: 84px;
+    }
+  }
+
+  /* The header sits on a narrower 48px gutter than the content rails. */
+  .header-gutter {
+    padding-inline: 24px;
+  }
+  @media (min-width: 744px) {
+    .header-gutter {
+      padding-inline: 40px;
+    }
+  }
+  @media (min-width: 1128px) {
+    .header-gutter {
+      padding-inline: 48px;
+    }
+  }
+
+  /*
+   * Rail columns. Airbnb shows 7 cards of 181.7px with a 12px gap at 1512px.
+   * `--rail-cols` drives the card basis so the count is set in one place.
+   */
+  .rail-track {
+    --rail-gap: 12px;
+    --rail-cols: 2.2;
+    display: flex;
+    gap: var(--rail-gap);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+  .rail-track > * {
+    flex: 0 0
+      calc((100% - (var(--rail-cols) - 1) * var(--rail-gap)) / var(--rail-cols));
+    /* Flex items default to min-width:auto, so a long card title would push
+       the item past its basis and make the rail ragged. */
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  @media (min-width: 550px) {
+    .rail-track {
+      --rail-cols: 3;
+    }
+  }
+  @media (min-width: 744px) {
+    .rail-track {
+      --rail-cols: 4;
+    }
+  }
+  @media (min-width: 950px) {
+    .rail-track {
+      --rail-cols: 5;
+    }
+  }
+  @media (min-width: 1128px) {
+    .rail-track {
+      --rail-cols: 6;
+    }
+  }
+  @media (min-width: 1440px) {
+    .rail-track {
+      --rail-cols: 7;
+    }
+  }
+
+  /* Horizontal card rails: scrollable but no visible scrollbar */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .line-clamp-1-safe {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

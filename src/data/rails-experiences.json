@@ -1,0 +1,70 @@
+[
+  {
+    "id": "happening-today-in-bengaluru",
+    "heading": "Happening today in Bengaluru",
+    "seeAllHref": "/s/Bengaluru/experiences?place_id=ChIJ_Q7NCkQWrjsRn2yP7O-T8Fg&refinement_paths%5B%5D=%2Fexperiences&checkin=2026-09-14&checkout=2026-09-14&search_type=HOMEPAGE_CAROUSEL_CLICK",
+    "itemIds": [
+      "6754224",
+      "1524151",
+      "1477116",
+      "6738245",
+      "6561260",
+      "6893603",
+      "7126842",
+      "6873029"
+    ]
+  },
+  {
+    "id": "tomorrow-in-bengaluru",
+    "heading": "Tomorrow in Bengaluru",
+    "seeAllHref": "/s/Bengaluru/experiences?place_id=ChIJ_Q7NCkQWrjsRn2yP7O-T8Fg&refinement_paths%5B%5D=%2Fexperiences&checkin=2026-09-15&checkout=2026-09-15&search_type=HOMEPAGE_CAROUSEL_CLICK",
+    "itemIds": [
+      "617537",
+      "6962933",
+      "7153134",
+      "7126842",
+      "6906309",
+      "7260856",
+      "6994360",
+      "7208589"
+    ]
+  },
+  {
+    "id": "experiences-this-weekend",
+    "heading": "Experiences this weekend",
+    "seeAllHref": "/s/Bengaluru/experiences?place_id=ChIJ_Q7NCkQWrjsRn2yP7O-T8Fg&refinement_paths%5B%5D=%2Fexperiences&checkin=2026-09-18&checkout=2026-09-20&search_type=HOMEPAGE_CAROUSEL_CLICK",
+    "itemIds": [
+      "6895622",
+      "26436",
+      "6994360",
+      "6681013",
+      "7208589",
+      "6873029",
+      "6603423",
+      "7257766"
+    ]
+  },
+  {
+    "id": "airbnb-originals",
+    "heading": "Airbnb Originals",
+    "seeAllHref": "/s/experiences?refinement_paths%5B%5D=%2Fexperiences&location_search=ANYWHERE&activity_listing_tiers%5B%5D=TIER_1&activity_listing_tiers%5B%5D=TIER_2&search_type=HOMEPAGE_CAROUSEL_CLICK",
+    "itemIds": [
+      "5975701",
+      "5749656",
+      "6221230",
+      "6022587",
+      "6027335",
+      "6098610",
+      "6093249",
+      "6099340",
+      "5801240",
+      "5946904",
+      "5632636",
+      "5563467",
+      "6204446",
+      "6099369",
+      "5997978",
+      "5890031"
+    ]
+  }
+]

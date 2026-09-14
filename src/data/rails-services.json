@@ -1,0 +1,118 @@
+[
+  {
+    "id": "photography",
+    "heading": "Photography",
+    "seeAllHref": "/s/Bengaluru/services?place_id=ChIJ_Q7NCkQWrjsRn2yP7O-T8Fg&refinement_paths%5B%5D=%2Fservices&service_type_tag=Tag%3A8949&pinned_service_type_tag=Tag%3A8949&search_type=HOMEPAGE_CAROUSEL_CLICK",
+    "itemIds": [
+      "7090495",
+      "7138705",
+      "7054201",
+      "6706044",
+      "7243771",
+      "7087961",
+      "7249794",
+      "7243229"
+    ]
+  },
+  {
+    "id": "discover-services-on-airbnb",
+    "heading": "Discover services on Airbnb",
+    "seeAllHref": null,
+    "itemIds": [
+      "7090495",
+      "7138705",
+      "7054201",
+      "6706044",
+      "7243771",
+      "7087961",
+      "7249794",
+      "7243229",
+      "7283043",
+      "7256419",
+      "7250791",
+      "7176543",
+      "7157582",
+      "7268547",
+      "7274696",
+      "7145259",
+      "2196204",
+      "7192384",
+      "3897053",
+      "1378905",
+      "7190831",
+      "6539365",
+      "6655262",
+      "7205777",
+      "7194643",
+      "7223617",
+      "7235847",
+      "7204016",
+      "7225705",
+      "7230785",
+      "7190818",
+      "7242422",
+      "7151621",
+      "6638988",
+      "7209780"
+    ]
+  },
+  {
+    "id": "services-in-bengaluru",
+    "heading": "Services in Bengaluru",
+    "seeAllHref": null,
+    "itemIds": [
+      "7283043",
+      "7256419",
+      "7243229",
+      "7250791",
+      "7176543",
+      "7157582",
+      "7268547",
+      "7274696"
+    ]
+  },
+  {
+    "id": "services-in-south-goa",
+    "heading": "Services in South Goa",
+    "seeAllHref": null,
+    "itemIds": [
+      "7145259",
+      "2196204",
+      "7192384",
+      "3897053",
+      "1378905",
+      "7190831",
+      "6539365",
+      "6655262"
+    ]
+  },
+  {
+    "id": "services-in-north-goa",
+    "heading": "Services in North Goa",
+    "seeAllHref": null,
+    "itemIds": [
+      "7249794",
+      "7205777",
+      "7194643",
+      "7223617",
+      "7235847",
+      "7204016",
+      "6539365",
+      "7225705"
+    ]
+  },
+  {
+    "id": "services-in-hyderabad",
+    "heading": "Services in Hyderabad",
+    "seeAllHref": null,
+    "itemIds": [
+      "7225705",
+      "7230785",
+      "7190818",
+      "7242422",
+      "7151621",
+      "6638988",
+      "7209780"
+    ]
+  }
+]
